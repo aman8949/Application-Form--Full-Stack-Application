@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techzilla Upskill Application Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=EB+Garamond&family=Inconsolata&family=Martel:wght@200&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: 'Cormorant Garamond', serif;
+            font-family: 'EB Garamond', serif;
+            font-family: 'Inconsolata', monospace;
+            font-family: 'Martel', serif;
+            font-size: 100%;
+        }
+
+        .container {
+            margin: 30px auto;
+            padding: 92px 4px;
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            height: 100%;
+            background-color: rgb(199, 199, 199);
+            border-radius: 4px;
+        }
+
+        label,
+        #im {
+            display: block;
+        }
+
+        h1 {
+            margin: 40px auto;
+            margin-top: 0px;
+            font-size: 180%;
+            ;
+        }
+
+        input {
+            width: 100%;
+            margin: 8px 0px;
+            padding: 6px 3px;
+            border: 1.5 px solid black;
+            border-radius: 2px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+        }
+
+        button {
+            width: 100%;
+            margin: 8px 0px;
+            padding: 6px 0px;
+        }
+
+        .items {
+            display: flex;
+            flex-direction: row;
+            margin: 3px 4px;
+        }
+
+        .rType {
+            width: 10%;
+        }
+
+        body:before {
+            background: url(images/ac.jpg) no-repeat center center/cover;
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 160vh;
+            z-index: -1;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Techzilla Upskill Application Form</h1>
+        <form action="/register" method="POST">
+            <label for="name">Name</label>
+            <input name="name" id="name" type="text">
+            <label for="email">E-Mail</label>
+            <input name="email" id="email" type="text">
+            <label for="phone">Phone No.</label>
+            <input name="phone" id="phone" type="phone">
+            <label id="radio" for="rType">Registration Type</label>
+            <div class="items"><input class="rType" name="rType" value="Self" type="radio"> Self</div>
+            <div class="items"><input class="rType" name="rType" value="Group" type="radio"> Group</div>
+            <div class="items"><input class="rType" name="rType" value="Corporate" type="radio"> Corporate</div>
+            <div class="items"><input class="rType" name="rType" value="Others" type="radio"> Others</div>
+            <label for="tickets">No. of Tickets</label>
+            <input id="tickets" type="number" name="tickets">
+            <label for="im">Upload ID Card (Formats: png, jpeg)</label>
+            <input type="file" name="userPhoto" id="im">
+            <button type="submit">Submit Now</button>
+        </form>
+    </div>
+</body>
+
+</html>
