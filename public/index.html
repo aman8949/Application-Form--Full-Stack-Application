@@ -9,88 +9,13 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=EB+Garamond&family=Inconsolata&family=Martel:wght@200&display=swap"
         rel="stylesheet">
-    <style>
-        * {
-            margin: 0px;
-            padding: 0px;
-            font-family: 'Cormorant Garamond', serif;
-            font-family: 'EB Garamond', serif;
-            font-family: 'Inconsolata', monospace;
-            font-family: 'Martel', serif;
-            font-size: 100%;
-        }
-
-        .container {
-            margin: 30px auto;
-            padding: 92px 4px;
-            display: flex;
-            flex-direction: column;
-            width: 40%;
-            height: 100%;
-            background-color: rgb(199, 199, 199);
-            border-radius: 4px;
-        }
-
-        label,
-        #im {
-            display: block;
-        }
-
-        h1 {
-            margin: 40px auto;
-            margin-top: 0px;
-            font-size: 180%;
-            ;
-        }
-
-        input {
-            width: 100%;
-            margin: 8px 0px;
-            padding: 6px 3px;
-            border: 1.5 px solid black;
-            border-radius: 2px;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            margin: auto;
-        }
-
-        button {
-            width: 100%;
-            margin: 8px 0px;
-            padding: 6px 0px;
-        }
-
-        .items {
-            display: flex;
-            flex-direction: row;
-            margin: 3px 4px;
-        }
-
-        .rType {
-            width: 10%;
-        }
-
-        body:before {
-            background: url(images/ac.jpg) no-repeat center center/cover;
-            content: "";
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            width: 100%;
-            height: 160vh;
-            z-index: -1;
-            opacity: 0.9;
-        }
-    </style>
+    <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 
 <body>
     <div class="container">
         <h1>Techzilla Upskill Application Form</h1>
-        <form action="/register" method="POST">
+        <form action="/preview" method="POST">
             <label for="name">Name</label>
             <input name="name" id="name" type="text">
             <label for="email">E-Mail</label>
@@ -106,7 +31,7 @@
             <input id="tickets" type="number" name="tickets">
             <label for="im">Upload ID Card (Formats: png, jpeg)</label>
             <input type="file" name="userPhoto" id="im">
-            <button type="submit">Submit Now</button>
+            <button id="btn" type="submit">Submit Now</button>
         </form>
     </div>
 </body>

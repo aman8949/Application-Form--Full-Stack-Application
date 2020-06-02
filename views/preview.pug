@@ -1,0 +1,27 @@
+html
+  head
+    title= title
+    link(href='https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=EB+Garamond&family=Inconsolata&family=Martel:wght@200&display=swap' rel='stylesheet')
+    style
+        include ../public/stylesheets/preview.css
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+  body
+    .container
+        h1 Verify Your Details!!
+        pre#cont=body
+        button(type='button' onclick='myFun()') Submit Now
+    
+    script.
+        function myFun(){
+            var dat=document.getElementById("cont").innerHTML;
+            $.ajax({
+                type: 'POST',
+                url: '/register',
+                data: dat,
+                success: function (item) {alert(item.message)},
+                contentType: "application/json",
+                dataType: 'json'
+            });
+        }
+
+
