@@ -53,7 +53,7 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 
-app.post('/preview',upload.single('image'),(req,res)=>{
+app.post('/preview',upload.single('userPhoto'),(req,res)=>{
     console.log(req.file);
     res.render('preview.pug', {
         title: 'Verify Your Details',
@@ -61,6 +61,7 @@ app.post('/preview',upload.single('image'),(req,res)=>{
       });
 });
 app.post('/register', (req, res) => {
+    
     console.log(req.body);
     var myData = new Part(req.body);
     myData.save()
@@ -74,7 +75,7 @@ app.post('/register', (req, res) => {
             res.setHeader("Content-Type","application/json");
             res.json({message:"Unable to save to database!", success:false});
         });
-})
+});
 app.listen(port, hostname, () => {
     console.log(`Server successfully running at http://${hostname}:${port}!!`);
 });
