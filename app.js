@@ -35,7 +35,7 @@ const storage = multer.diskStorage({
     },
 
     filename: (req, file, cb) => {
-        cb(null, file.fieldname+'-'+Date.now());
+        cb(null, file.originalname);
     }
 });
 
@@ -53,7 +53,8 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 
-app.post('/preview',upload.single('userPhoto'),(req,res)=>{
+app.post('/preview',upload.single('image'),(req,res)=>{
+    console.log(req.file);
     res.render('preview.pug', {
         title: 'Verify Your Details',
         body: JSON.stringify(req.body,null,'\n')  // This is your form data as a JSON object.
@@ -66,7 +67,7 @@ app.post('/register', (req, res) => {
         .then(item => {
             res.status(200);
             res.setHeader("Content-Type","application/json");
-            res.json({message:"You have been registered successfully! Note down your Registration No. for future reference."+"\n"+ item._id,success:true});
+            res.json({message:"Success!"+"\n"+"Note down your Registration No. for future reference."+"\n"+ item._id,success:true});
         })
         .catch(err => {
             res.status(400);

@@ -23,9 +23,10 @@ const Part=new Schema({
         type:Number,
         required:true
     },
-    idCard:{
+    userPhoto:{
         data:Buffer,
-        type:String
+        type:String,
+        required:true
     },
     admin:{
         type:Boolean,

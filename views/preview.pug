@@ -9,6 +9,7 @@ html
     .container
         h1 Verify Your Details!!
         pre#cont=body
+        //- button(type='button' onclick='show_image("",276,110,"Not Found")') Display ID Card
         button(type='button' onclick='myFun()') Submit Now
     
     script.
@@ -23,5 +24,15 @@ html
                 dataType: 'json'
             });
         }
+        //- function show_image(src, width, height, alt) {
+        //-     var img = document.createElement("img");
+        //-     src=document.getElementById("cont").userPhoto;
+        //-     img.src = src;
+        //-     img.width = width;
+        //-     img.height = height;
+        //-     img.alt = alt;
+        //-     var myWindow = window.open("", "", "width=400,height=200");
+        //-     myWindow.document.body.appendChild(img);
+        //- }
 
 
